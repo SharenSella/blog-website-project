@@ -1,14 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Website</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="images/pfavicon.png">
+
+   <!-- Style sheets -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" 
+      rel="stylesheet"
+    />
+
+  <!-- Scripts -->
+    
+    <script src="https://kit.fontawesome.com/2d1fe27aec.js" crossorigin="anonymous" defer></script>
+    <script src="./scripts/bundle.js" defer></script>
+    <title class="">Snappy</title>
+</head>
+
+<body class="bg">
+    <!-- <div class="container-fluid"></div>
+    <div class="class-row">
+        <div class="col-3 sticky-top">
+
+        </div>
+        <div class="col-9 sticky-top"
+    </div> -->
+
+    <header>
+        <nav class="navBar bg-gradient-light">
+            <div class="top-left">
+                <!-- logo and about/options text -->
+                <img id="logo" class="logo" src="./images/coolpengu.png">
+                <div class="about-text">
+                    <div class="about-description">
+                        <h2 class = "text-primary" >What is Snappy?</h2>
+                        <br>
+                        <p class="about-description">
+                            <b>snappy</b> is greatest anonymous messageboard web journal.
+                        </p>
+                        <p>we keep all users protected by issuing unique personal identification.</p> 
+                        <br>
+
+                    </div>
+                    <div class="how-to-use text-primary">
+                        <h2>Get started using Snappy!</h2>
+                        <br>
+                        <p>First, start typing away in the snap box and hit snap to create your first post.</p>
+                        <p>Additionally you can send gifs via giphy or add your own images via url link.</p>
+                    </div>
+                    
+                </div>
+
+                
+                <p class="left-footer">Project by Sharen, Franklyn, Anna, Josh & Hayden</p>
+            </div>
+            <div class="top">
+                <!-- mobile logo and title -->
+                <img class="mobile-logo" src="./images/coolpengu.png">
+                <div class="logo">
+                    <h1>
+                      <span class="center">S</span>
+                      <span class="center">N</span>
+                      <span class="center">A</span>
+                      <span class="center">P</span>
+                      <span class="center">P</span>
+                      <span class="center">Y</span>
+                    </h1>
+                  </div>
+                <!-- <h2 class="snapper flying-in">snappy</h2> -->
+                <div class="search">
+                    <i class="fas fa-search pe-2"></i>
+                    <input id="search-input" type="text" placeholder="Search Snapper">
+                    <input type="submit" id="search-posts-submit" class="btn btn-outline-success">
+                </div>
+                <div class="snap-box custom-card">
+                   
+                   <div class="top-box">
+                    <!-- includes user image  -->
+                    <div class="left-box ">
+                        <img id="duck-img" src="./images/dancingpengu.png">
+                    </div>
+                    <!-- includes text input submit button and gif option -->
+                    <div class="rightbox">
+                        <div class="top-snap" id="top-snap">
+                            <input id="snap-input" type="text" placeholder="What's Snapping??" maxlength="150">
+                            <p id="remaining-chars" class=""></p>
+                        </div>
+                    </div>
+                    </div>
+                        <div class=big-bottom>
+                            <div class="bottom-snap">
+                                <i class="add-image far fa-image" id="add-image"></i>
+                                <p id="gifBtn" class="gif"><span class="bluegif">gif</span>
+                                <input id="snap-btn" value="Snap" type="submit">
+                            </div>
+                            <div class="bottom-bottom">
+                                <input id="img-input" class="img-input hidden" type="text"
+                                    placeholder="Enter Image Url">
+                            </div>
+                            <form id="gifForm" class="hidden">
+                                <input id="search" placeholder="Search for a GIF! " type="search" />
+                                <div class="previewAdd">
+                                <button id="previewGif" class="previewGif btn btn-outline-success">Preview GIF</button>
+                                <button id="btnSearch" class="btnSearch btn btn-outline-success">Add GIF</button>
+                                </div>
+                            </form>
+                            <div class="out">
+                            </div>
+                            <figure id="figure" class="gifholder"></figure>
+                        </div>
+                    
+                </div>
+
+                <section class="snap-holder card">
+                    <div class="sort">
+                        <label for="sortBy">Sort By</label>
+                        <select name="trendingOrNew" id="sortBy">
+                            <option value="Trending">Trending</option>
+                            <option value="New">New</option>
+                            <option value="Random">Random</option>
+                            <option value="Revelance">Revelance</option>
+                        </select>
+                    </div>
+                    <div class="snap-test" id="snap-test-holder" style="--animation-order: 1">
+
+                    </div>
+                    <div class="card no-more-snaps" id="no-more-snaps">
+                        <div class="card-body">
+                            <p class="card-text">
+                                No more snaps
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="top-right">
+
+
+                <div class="trending" id="trending">
+                    <h1>Trending</h1>
+
+                </div>
+
+            </div>
+
+
+            </div>
+        </nav>
+    </header>
 </body>
+
 </html>

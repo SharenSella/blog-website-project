@@ -1,0 +1,696 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: var(--secondary-0);
+}
+
+body {
+  font-family: "Oswald", serif;
+}
+
+/* root  */
+
+:root {
+  /* light mode colours */
+  --primary-0: rgba(246, 223, 220, 1);
+  --primary-1: rgba(196, 184, 166, 1);
+  --primary-2: rgba(217, 203, 190, 1);
+  --primary-3: rgba(236, 180, 174, 1);
+  --primary-4: rgba(211, 161, 154, 1);
+  /* dark mode colours (will adjust later) */
+  --secondary-0: rgba(246, 255, 255, 1);
+  --secondary-1: rgba(196, 255, 250, 1);
+  --secondary-2: rgba(217, 255, 249, 1);
+  --secondary-3: rgba(236, 254, 255, 1);
+  --secondary-4: rgba(211, 233, 230, 1);
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-evenly;
+  position: sticky;
+  background-color: var(--secondary-0);
+}
+
+/* Left-hand sidebar  */
+.logo {
+  width: 6rem;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  margin-top: 1rem;
+}
+
+.about-text {
+  font-family: "Oswald", serif;
+  color: #0d6efd;
+  position: fixed;
+  width: 25vw;
+  left: 10px;
+  margin-top: 100px;
+}
+
+.options {
+  position: fixed;
+  margin-top: 50px;
+}
+
+.left-footer {
+  position: fixed;
+  bottom: 0;
+  left: 1.5rem;
+}
+
+/* Right-hand sidebar  */
+
+.top-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.trending {
+  position: fixed;
+  top: 1rem;
+  text-align: center;
+}
+
+
+
+.trending i {
+  display: none;
+}
+
+
+/* Middle Bar */
+
+.top {
+  width: 40%;
+  text-align: center;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+/* Main logo heading */
+
+.logo h1 {
+  display: flex;
+}
+
+.logo h1 span {
+  /* font-family: "Lato", sans-serif; */
+  font-size: 2rem;
+  font-weight: 900;
+  color: #FF6347;
+  text-transform: uppercase;
+  background-color: #FFF;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-self: flex-start;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.logo h1 span:nth-child(1) {
+  animation: drop-letters 5s 0.1s infinite;
+}
+
+.logo h1 span:nth-child(2) {
+  animation: drop-letters 5s 0.2s infinite;
+}
+
+.logo h1 span:nth-child(3) {
+  animation: drop-letters 5s 0.3s infinite;
+}
+
+.logo h1 span:nth-child(4) {
+  animation: drop-letters 5s 0.4s infinite;
+}
+
+.logo h1 span:nth-child(5) {
+  animation: drop-letters 5s 0.5s infinite;
+}
+
+.logo h1 span:nth-child(6) {
+  animation: drop-letters 5s 0.6s infinite;
+}
+
+@keyframes drop-letters {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(-100%);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.search {
+  position: relative;
+  margin-top: 3rem;
+}
+
+
+/* The snap input box  */
+
+.snap-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.top-box {
+  display:flex;
+}
+
+.left-box {
+  display: inline-block;
+}
+
+/* profile image next to snapping input */ 
+.left-box img { 
+  width: 50px;
+  height: 50px;
+}
+
+
+.rightbox {
+  display: inline-block;
+  width: 90%;
+}
+
+
+#remaining-chars {
+  color: var(--primary-4);
+  left: -10px;
+  margin-left: -50px;
+}
+
+#snap-input {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+  height: 6rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+#snap-input:hover {
+  box-shadow: 0px 0px 4px 0px var(--primary-1);
+  border-radius: 10px;
+}
+
+#snap-input:focus {
+  outline: none;
+}
+
+.bottom-snap {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0.5rem;
+  align-items: baseline;
+}
+
+#add-image {
+  font-size: 2.5rem;
+}
+
+#add-image:hover {
+  color: var(--primary-1);
+  cursor: pointer;
+}
+
+.gif {
+  font-weight: 800;
+  font-size: 15px;
+  padding-left: 55px;
+}
+
+.gif:hover {
+  cursor: pointer;
+}
+
+.bluegif {
+  color: blue;
+}
+
+.img-input {
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+}
+
+.img-input-animation {
+  animation-duration: 0.2s;
+  animation-name: fadein;
+}
+
+#gifForm {
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+
+#gifForm button {
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.previewAdd {
+  margin-right: 35px;
+}
+
+#search {
+  width: 100%;
+  height: 2rem;
+  margin-left: -1.5px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.img-input,
+#search {
+  border: 1px solid var(--primary-0);
+  box-shadow: 0px 0px 10px var(--primary-0);
+  border-radius: 1.5rem;
+}
+
+#figure {
+  margin-right: 29px ;
+}
+
+#snap-btn {
+  border-radius: 3rem;
+  border-width: 0px;
+  width: 10rem;
+  height: 3rem;
+  background-color: #FFD700;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 0.5rem;
+}
+
+#snap-btn:hover {
+  background-color: #6bbd52;
+}
+
+
+/* client-side entries */
+
+.sort {
+  position: relative;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+
+#snap-test-holder {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+div > .card {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 1.5rem;
+  font-size: 1 rem;
+}
+
+.custom-card {
+  padding: 5px;
+}
+
+
+div > .card-footer {
+  background-color: var(--primary-1);
+  border-radius: 20px;
+}
+
+/* title + text in comment section */
+div > .card-footer > h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+  color: var(--secondary-0);
+  font-weight: bolder;
+}
+
+/* Comments  */
+
+.commentText {
+  font-size: 1.4rem;
+  text-align: left;
+}
+
+.commentDate {
+  text-align: right;
+  position: relative;
+  bottom: 5vh;
+}
+
+.comment-reactions-div {
+  position: relative;
+  right: 38%;
+  top: 1vh;
+}
+
+.no-comments-text {
+  padding: 10px;
+}
+
+.comment-input,
+.comment-button {
+  border: 1px solid rgba(141, 183, 165, 1);
+  border-radius: 2rem;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.commentAuthor {
+  display: inline-block;
+  position: relative;
+  bottom: 3vh;
+}
+
+.timeStamp, .CommentTimeStamp {
+  font-size: 1rem;
+}
+
+.lower-comment-holder {
+  display: flex;
+  flex-direction: row;
+  margin-left: 120px;
+}
+
+.snap-test .card .card-footer {
+  border-radius: 0px 0px 15px 15px;
+}
+
+.snap-test .card .card-img-top {
+  border-radius: 15px 15px 0px 0px;
+}
+
+.card-footer p {
+  margin-top: 0rem;
+  margin-bottom: 0px;
+}
+
+/* client reactions */
+
+.reactions-div {
+  margin-bottom: 30px;
+}
+
+.reaction-button:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.snap-reactions i {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+
+.snap-reactions .card-icons {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.snap-reactions .card-icons:hover {
+  color: #60a74a;
+  cursor: pointer;
+}
+
+.reactions-div,
+.comment-reactions-div {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  margin: auto;
+  padding: 1rem;
+}
+
+.reactions-div > button,
+.comment-reactions-div > button {
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  border: var(--primary-2) solid 0.5px;
+}
+
+.reactions-div > button:hover,
+.reactions-div > button:active,
+.comment-reactions-div > button:hover,
+.comment-reactions-div > button:active {
+  border: var(--secondary-0) solid 0.5px;
+  background-color: var(--primary-0);
+  font-weight: bolder;
+  color: var(--secondary-0);
+}
+
+.search {
+  display: flex;
+  left: 10%;
+  right: 10%;
+  justify-content: center;
+  border: 1px solid lightgray;
+  width: 80%;
+  height: 4rem;
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+}
+
+#search-input {
+  border-width: 0px;
+  margin-left: 0;
+}
+
+.search,
+#search-input {
+  background-color: white;
+}
+
+.search:hover {
+  box-shadow: 0px 0px 0.4rem var(--primary-1);
+}
+
+#search-input:focus {
+  outline: none;
+  margin-left: 0.3rem;
+}
+
+.mobile-logo {
+  display: none;
+}
+
+.mobile-btns {
+  display: none;
+  font-size: 3rem;
+  color: black;
+  margin-top: 0.8rem;
+}
+
+.card {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+
+.snap-holder {
+  margin-bottom: 4rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-2) !important;
+  font-size: 2rem;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+
+#no-more-snaps {
+  left: 25%;
+  right: 25%;
+  border-radius: 10px;
+  width: 50%;
+}
+
+/* Hidden toggle class  */
+
+.hidden {
+  visibility: hidden;
+}
+
+
+/* Responsiveness */
+
+@media only screen and (max-width: 970px) {
+  /* .top-left {
+        display: none ;
+    } */
+  .left-footer {
+    display: none;
+  }
+
+  .top-right {
+    display: none;
+  }
+
+  .top {
+    width: 50%;
+    margin-right: 5px;
+  }
+
+  footer {
+    position: fixed;
+    height: 50px;
+    background-color: lightgreen;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+  }
+
+  .mobile-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  /* .mobile-logo {
+        display: inline-block;
+        position: absolute;
+        left: 5px;
+        top:5px; 
+        width: 60px; 
+        
+    }
+     */
+}
+
+@media only screen and (max-width: 870px) {
+  .comment-reactions-div {
+    position: relative;
+    top: 1.5vh;
+  }
+
+  .comment-reactions-div > button {
+    border-radius: 10px;
+    padding: 0.5rem 0.5rem;
+  }
+
+  .commentAuthor {
+    width: 50%;
+    position: relative;
+    bottom: 4vh;
+  }
+
+  .commentDate {
+    bottom: 6vh;
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+
+  .snap-holder {
+    margin-right: 1.5rem;
+  }
+  
+  .top {
+    width: 100%;
+  }
+
+  .snapper {
+    display: inline-block;
+  }
+
+  .logo {
+    position: absolute;
+  }
+
+  .about-text {
+    display: none;
+  }
+
+  .options {
+    display: none;
+  }
+
+  .commentAuthor {
+    left: 50px;
+    text-align: right;
+  }
+  .commentDate {
+    bottom: 3vh;
+    text-align: center;
+  }
+}
+
+
+/* ANIMATION */
+
+/* testing animation loading */
+/* .animated-div {
+  opacity: 0;
+  animation-name: animateIn;
+  animation-duration: 300ms;
+  animation-delay: calc(var(--animation-order) * 200ms);
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+} */
+
+/* div {
+    animation-name: animateIn;
+    animation-duration: 200ms;
+    animation-delay: calc(var(--animation-order) * 100ms);
+    animation-timing-function: ease-in-out;
+} */
+
+@keyframes animateIn {
+  0% {
+    transform: scale(0.8);
+    filter: grayscale(100%);
+    opacity: 0;
+    top: -20px;
+  }
+
+  100% {
+    transform: scale(1);
+    filter: grayscale(0%);
+    opacity: 1;
+    top: 0px;
+  }
+}
+
