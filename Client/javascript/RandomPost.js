@@ -185,4 +185,3 @@ randomBtn.addEventListener('click', (e) => {
 })
 
 loadContent();
-

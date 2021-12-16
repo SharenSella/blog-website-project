@@ -13,4 +13,3 @@ function settingListeners() {
 }
 settingListeners();
 helpers.lightMode();
-
